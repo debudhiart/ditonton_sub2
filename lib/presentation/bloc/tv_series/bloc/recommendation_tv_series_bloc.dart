@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:ditonton/domain/entities/tv_series.dart';
-import 'package:ditonton/domain/usecases/get_tv_series_detail.dart';
 import 'package:ditonton/domain/usecases/get_tv_series_recommendations.dart';
 import 'package:equatable/equatable.dart';
 

@@ -17,6 +17,7 @@ class OnTheAirNowTVSeriesLoading extends OnTheAirNowTVSeriesState {
   List<Object> get props => [];
 }
 
+// ignore: must_be_immutable
 class OnTheAirNowTVSeriesError extends OnTheAirNowTVSeriesState {
   String message;
   OnTheAirNowTVSeriesError(this.message);

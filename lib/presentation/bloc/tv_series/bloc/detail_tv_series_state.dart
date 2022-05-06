@@ -17,6 +17,7 @@ class DetailTVSeriesLoading extends DetailTVSeriesState {
   List<Object> get props => [];
 }
 
+// ignore: must_be_immutable
 class DetailTVSeriesError extends DetailTVSeriesState {
   String message;
   DetailTVSeriesError(this.message);

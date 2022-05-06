@@ -1,7 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
 import 'package:ditonton/common/failure.dart';
-// import 'package:ditonton/presentation/bloc/movie/bloc/now_playing_movies_bloc.dart';
+
 import 'package:ditonton/presentation/bloc/movie/bloc/popular_movies_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';

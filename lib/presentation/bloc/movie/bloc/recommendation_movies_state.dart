@@ -17,6 +17,7 @@ class RecommendationMoviesLoading extends RecommendationMoviesState {
   List<Object> get props => [];
 }
 
+// ignore: must_be_immutable
 class RecommendationMoviesError extends RecommendationMoviesState {
   String message;
   RecommendationMoviesError(this.message);

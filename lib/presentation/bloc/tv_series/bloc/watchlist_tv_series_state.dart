@@ -17,6 +17,7 @@ class WatchlistTVSeriesLoading extends WatchlistTVSeriesState {
   List<Object> get props => [];
 }
 
+// ignore: must_be_immutable
 class WatchlistTVSeriesError extends WatchlistTVSeriesState {
   String message;
   WatchlistTVSeriesError(this.message);

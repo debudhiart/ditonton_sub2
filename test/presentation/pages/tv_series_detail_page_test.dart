@@ -1,26 +1,18 @@
-import 'package:ditonton/common/state_enum.dart';
-
-import 'package:ditonton/domain/entities/tv_series.dart';
 import 'package:ditonton/presentation/bloc/tv_series/bloc/detail_tv_series_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv_series/bloc/recommendation_tv_series_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv_series/bloc/watchlist_tv_series_bloc.dart';
 import 'package:ditonton/presentation/pages/tv_series_detail_page.dart';
-import 'package:ditonton/presentation/provider/tv_series_detail_notifier.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 
 import 'package:mocktail/mocktail.dart';
-import 'package:provider/provider.dart';
 
 import '../../dummy_data/dummy_objects.dart';
 
 import '../../helpers/tv_series_page_helper.dart';
-import 'tv_series_detail_page_test.mocks.dart';
 
-@GenerateMocks([TVSeriesDetailNotifier])
 void main() {
   late FakeDetailTVSeriesBloc fakeDetailTVSeriesBloc;
   late FakeTVSeriesRecommendationsBloc fakeTVSeriesRecommendationsBloc;
@@ -70,10 +62,8 @@ void main() {
       (WidgetTester tester) async {
     when(() => fakeDetailTVSeriesBloc.state)
         .thenReturn(DetailTVSeriesLoading());
-    // when(mockNotifier.tvSeries).thenReturn(testTVSeriesDetailResponseEntity);
     when(() => fakeTVSeriesRecommendationsBloc.state)
         .thenReturn(RecommendationTVSeriesLoading());
-    // when(mockNotifier.tvSeriesRecommendations).thenReturn(<TVSeries>[]);
     when(() => fakeWatchlistTVSeriesBloc.state)
         .thenReturn(WatchlistTVSeriesLoading());
 
@@ -89,10 +79,8 @@ void main() {
       (WidgetTester tester) async {
     when(() => fakeDetailTVSeriesBloc.state)
         .thenReturn(DetailTVSeriesLoading());
-    // when(mockNotifier.tvSeries).thenReturn(testTVSeriesDetailResponseEntity);
     when(() => fakeTVSeriesRecommendationsBloc.state)
         .thenReturn(RecommendationTVSeriesLoading());
-    // when(mockNotifier.tvSeriesRecommendations).thenReturn(<TVSeries>[]);
     when(() => fakeWatchlistTVSeriesBloc.state)
         .thenReturn(WatchlistTVSeriesLoading());
 
@@ -108,13 +96,10 @@ void main() {
       (WidgetTester tester) async {
     when(() => fakeDetailTVSeriesBloc.state)
         .thenReturn(DetailTVSeriesHasData(testTVSeriesDetailResponseEntity));
-    // when(mockNotifier.tvSeries).thenReturn(testTVSeriesDetailResponseEntity);
     when(() => fakeTVSeriesRecommendationsBloc.state)
         .thenReturn(RecommendationTVSeriesHasData(testTVSeriesList));
-    // when(mockNotifier.tvSeriesRecommendations).thenReturn(<TVSeries>[]);
     when(() => fakeWatchlistTVSeriesBloc.state)
         .thenReturn(InsertDataTVSeriesToWatchlist(false));
-    // when(mockNotifier.watchlistMessage).thenReturn('Added to Watchlist');
 
     final watchlistButton = find.byType(ElevatedButton);
 
@@ -134,13 +119,10 @@ void main() {
       (WidgetTester tester) async {
     when(() => fakeDetailTVSeriesBloc.state)
         .thenReturn(DetailTVSeriesHasData(testTVSeriesDetailResponseEntity));
-    // when(mockNotifier.tvSeries).thenReturn(testTVSeriesDetailResponseEntity);
     when(() => fakeTVSeriesRecommendationsBloc.state)
         .thenReturn(RecommendationTVSeriesHasData(testTVSeriesList));
-    // when(mockNotifier.tvSeriesRecommendations).thenReturn(<TVSeries>[]);
     when(() => fakeWatchlistTVSeriesBloc.state)
         .thenReturn(InsertDataTVSeriesToWatchlist(false));
-    // when(mockNotifier.watchlistMessage).thenReturn('Failed');
 
     final watchlistButton = find.byType(ElevatedButton);
 

@@ -4,16 +4,13 @@ import 'package:ditonton/presentation/bloc/tv_series/bloc/on_the_air_now_tv_seri
 import 'package:ditonton/presentation/bloc/tv_series/bloc/popular_tv_series_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv_series/bloc/top_rated_tv_series_bloc.dart';
 import 'package:ditonton/presentation/pages/popular_tv_series_page.dart';
-import 'package:ditonton/common/state_enum.dart';
 import 'package:ditonton/presentation/pages/search_tv_series_page.dart';
 import 'package:ditonton/presentation/pages/top_rated_tv_series_page.dart';
 import 'package:ditonton/presentation/widgets/navigation_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/provider.dart';
 
 import 'package:ditonton/presentation/pages/tv_series_detail_page.dart';
-import 'package:ditonton/presentation/provider/tv_series_list_notifier.dart';
 import 'package:ditonton/domain/entities/tv_series.dart';
 
 class HomeTVSeriesPage extends StatefulWidget {
@@ -26,11 +23,6 @@ class _HomeTVSeriesPageState extends State<HomeTVSeriesPage> {
   @override
   void initState() {
     super.initState();
-    // Future.microtask(
-    //     () => Provider.of<TVSeriesListNotifier>(context, listen: false)
-    //       ..fetchOnTheAirTVSeries()
-    //       ..fetchPopularTVSeries()
-    //       ..fetchTopRatedTVSeries());
 
     Future.microtask(() {
       context
@@ -89,18 +81,6 @@ class _HomeTVSeriesPageState extends State<HomeTVSeriesPage> {
                   }
                 },
               ),
-              // Consumer<TVSeriesListNotifier>(builder: (context, data, child) {
-              //   final state = data.nowPlayingState;
-              //   if (state == RequestState.Loading) {
-              //     return Center(
-              //       child: CircularProgressIndicator(),
-              //     );
-              //   } else if (state == RequestState.Loaded) {
-              //     return TVSeriesList(data.onTheAirTVSeries);
-              //   } else {
-              //     return Text('Failed');
-              //   }
-              // }),
               _buildSubHeading(
                 title: 'Popular',
                 onTap: () => Navigator.pushNamed(
@@ -129,18 +109,6 @@ class _HomeTVSeriesPageState extends State<HomeTVSeriesPage> {
                   }
                 },
               ),
-              // Consumer<TVSeriesListNotifier>(builder: (context, data, child) {
-              //   final state = data.popularTVSeriesState;
-              //   if (state == RequestState.Loading) {
-              //     return Center(
-              //       child: CircularProgressIndicator(),
-              //     );
-              //   } else if (state == RequestState.Loaded) {
-              //     return TVSeriesList(data.popularTVSeries);
-              //   } else {
-              //     return Text('Failed');
-              //   }
-              // }),
               _buildSubHeading(
                 title: 'Top Rated',
                 onTap: () => Navigator.pushNamed(
@@ -169,18 +137,6 @@ class _HomeTVSeriesPageState extends State<HomeTVSeriesPage> {
                   }
                 },
               ),
-              // Consumer<TVSeriesListNotifier>(builder: (context, data, child) {
-              //   final state = data.topRatedTVSeriesState;
-              //   if (state == RequestState.Loading) {
-              //     return Center(
-              //       child: CircularProgressIndicator(),
-              //     );
-              //   } else if (state == RequestState.Loaded) {
-              //     return TVSeriesList(data.topRatedTVSeries);
-              //   } else {
-              //     return Text('Failed');
-              //   }
-              // }),
             ],
           ),
         ),
@@ -213,9 +169,7 @@ class _HomeTVSeriesPageState extends State<HomeTVSeriesPage> {
 class TVSeriesList extends StatelessWidget {
   final List<TVSeries> tvSeries;
 
-  // TVSeriesList(this.tvSeries);
   TVSeriesList({Key? key, required this.tvSeries}) : super(key: key);
-  // MovieList({Key? key, required this.movies}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

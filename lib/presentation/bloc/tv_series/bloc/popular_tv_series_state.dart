@@ -17,6 +17,7 @@ class PopularTVSeriesLoading extends PopularTVSeriesState {
   List<Object> get props => [];
 }
 
+// ignore: must_be_immutable
 class PopularTVSeriesError extends PopularTVSeriesState {
   String message;
   PopularTVSeriesError(this.message);

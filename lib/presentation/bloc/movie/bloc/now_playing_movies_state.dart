@@ -17,6 +17,7 @@ class NowPlayingMoviesLoading extends NowPlayingMoviesState {
   List<Object> get props => [];
 }
 
+// ignore: must_be_immutable
 class NowPlayingMoviesError extends NowPlayingMoviesState {
   String message;
   NowPlayingMoviesError(this.message);

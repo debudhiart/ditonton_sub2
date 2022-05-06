@@ -17,6 +17,7 @@ class WatchlistMovieLoading extends WatchlistMovieState {
   List<Object> get props => [];
 }
 
+// ignore: must_be_immutable
 class WatchlistMovieError extends WatchlistMovieState {
   String message;
   WatchlistMovieError(this.message);

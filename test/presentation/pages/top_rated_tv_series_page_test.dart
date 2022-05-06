@@ -1,22 +1,14 @@
-import 'package:ditonton/common/state_enum.dart';
-import 'package:ditonton/domain/entities/tv_series.dart';
-import 'package:ditonton/presentation/bloc/movie/bloc/popular_movies_bloc.dart';
-import 'package:ditonton/presentation/bloc/tv_series/bloc/popular_tv_series_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv_series/bloc/top_rated_tv_series_bloc.dart';
 import 'package:ditonton/presentation/pages/top_rated_tv_series_page.dart';
-import 'package:ditonton/presentation/provider/top_rated_tv_series_notifier.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
 
 import 'package:mocktail/mocktail.dart';
-import 'package:provider/provider.dart';
 
 import '../../helpers/tv_series_page_helper.dart';
-import 'top_rated_tv_series_page_test.mocks.dart';
 
-@GenerateMocks([TopRatedTVSeriesNotifier])
 void main() {
   late FakeTopRatedTVSeriesBloc fakeTopRatedTVSeriesBloc;
 
@@ -33,13 +25,6 @@ void main() {
         home: body,
       ),
     );
-
-    // ChangeNotifierProvider<TopRatedTVSeriesNotifier>.value(
-    //   value: mockNotifier,
-    //   child: MaterialApp(
-    //     home: body,
-    //   ),
-    // );
   }
 
   tearDown(() {

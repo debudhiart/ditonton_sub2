@@ -17,6 +17,7 @@ class TopRatedTVSeriesLoading extends TopRatedTVSeriesState {
   List<Object> get props => [];
 }
 
+// ignore: must_be_immutable
 class TopRatedTVSeriesError extends TopRatedTVSeriesState {
   String message;
   TopRatedTVSeriesError(this.message);

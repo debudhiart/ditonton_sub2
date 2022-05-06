@@ -9,16 +9,10 @@ import 'package:ditonton/common/failure.dart' as _i6;
 import 'package:ditonton/domain/entities/movie.dart' as _i9;
 import 'package:ditonton/domain/entities/movie_detail.dart' as _i7;
 import 'package:ditonton/domain/repositories/movie_repository.dart' as _i2;
-import 'package:ditonton/domain/usecases/get_movie_detail.dart' as _i4;
-import 'package:ditonton/domain/usecases/get_movie_recommendations.dart' as _i8;
-import 'package:ditonton/domain/usecases/get_now_playing_movies.dart' as _i10;
-import 'package:ditonton/domain/usecases/get_popular_movies.dart' as _i11;
-import 'package:ditonton/domain/usecases/get_top_rated_movies.dart' as _i12;
 import 'package:ditonton/domain/usecases/get_watchlist_movies.dart' as _i14;
 import 'package:ditonton/domain/usecases/get_watchlist_status.dart' as _i13;
 import 'package:ditonton/domain/usecases/remove_watchlist.dart' as _i16;
 import 'package:ditonton/domain/usecases/save_watchlist.dart' as _i15;
-import 'package:ditonton/domain/usecases/search_movies.dart' as _i17;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint

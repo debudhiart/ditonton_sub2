@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/domain/entities/genre.dart';
-// import 'package:ditonton/common/state_enum.dart';
+
 import 'package:ditonton/presentation/bloc/tv_series/bloc/detail_tv_series_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv_series/bloc/recommendation_tv_series_bloc.dart';
 import 'package:ditonton/presentation/bloc/tv_series/bloc/watchlist_tv_series_bloc.dart';
@@ -10,11 +10,8 @@ import 'package:ditonton/presentation/pages/watchlist_tv_series_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-// import 'package:provider/provider.dart';
 
-// import 'package:ditonton/domain/entities/tv_series.dart';
 import 'package:ditonton/domain/entities/tv_series_detail.dart';
-// import 'package:ditonton/presentation/provider/tv_series_detail_notifier.dart';
 
 class TVSeriesDetailPage extends StatefulWidget {
   static const ROUTE_NAME = '/detail-tv-series';
@@ -30,12 +27,6 @@ class _TVSeriesDetailPageState extends State<TVSeriesDetailPage> {
   @override
   void initState() {
     super.initState();
-    // Future.microtask(() {
-    //   Provider.of<TVSeriesDetailNotifier>(context, listen: false)
-    //       .fetchTVSeriesDetail(widget.id);
-    //   Provider.of<TVSeriesDetailNotifier>(context, listen: false)
-    //       .loadWatchlistStatus(widget.id);
-    // });
 
     Future.microtask(() {
       context
@@ -47,10 +38,6 @@ class _TVSeriesDetailPageState extends State<TVSeriesDetailPage> {
       context
           .read<WatchlistTVSeriesBloc>()
           .add(GotWatchlistTVSeries(widget.id));
-      // Provider.of<MovieDetailNotifier>(context, listen: false)
-      //     .fetchMovieDetail(widget.id);
-      // Provider.of<MovieDetailNotifier>(context, listen: false)
-      //     .loadWatchlistStatus(widget.id);
     });
   }
 
@@ -87,39 +74,15 @@ class _TVSeriesDetailPageState extends State<TVSeriesDetailPage> {
           }
         },
       ),
-      // Consumer<TVSeriesDetailNotifier>(
-      //   builder: (context, provider, child) {
-      //     if (provider.tvSeriesState == RequestState.Loading) {
-      //       return Center(
-      //         child: CircularProgressIndicator(),
-      //       );
-      //     } else if (provider.tvSeriesState == RequestState.Loaded) {
-      //       final tvSeries = provider.tvSeries;
-      //       return SafeArea(
-      //         child: DetailContent(
-      //           tvSeries,
-      //           provider.tvSeriesRecommendations,
-      //           provider.isAddedTVSeriesToWatchlist,
-      //           provider,
-      //         ),
-      //       );
-      //     } else {
-      //       return Text(provider.message);
-      //     }
-      //   },
-      // ),
     );
   }
 }
 
+// ignore: must_be_immutable
 class DetailContent extends StatefulWidget {
   final TVSeriesDetail tvSeries;
-  // final List<TVSeries> recommendations;
-  late bool isWatchlistStatus;
-  // final TVSeriesDetailNotifier provider;
 
-  // DetailContent(this.tvSeries, this.recommendations, this.isAddedWatchlist,
-  //     this.provider);
+  late bool isWatchlistStatus;
 
   DetailContent(
     this.tvSeries,
@@ -348,50 +311,11 @@ class _DetailContentState extends State<DetailContent> {
                                 }
                               },
                             ),
-                            // if (provider.tvSeriesRecommendations.isEmpty)
-                            //   Container(
-                            //     child: Text(
-                            //       'There is no recommendations',
-                            //     ),
-                            //   )
-                            // else
-                            //   Consumer<TVSeriesDetailNotifier>(
-                            //     builder: (context, data, child) {
-                            //       if (data.recommendationStateTVSeries ==
-                            //           RequestState.Loading) {
-                            //         return Center(
-                            //           child: CircularProgressIndicator(),
-                            //         );
-                            //       } else if (data.recommendationStateTVSeries ==
-                            //           RequestState.Error) {
-                            //         return Text(data.message);
-                            //       } else if (data.recommendationStateTVSeries ==
-                            //           RequestState.Loaded) {
-                            //         return SizedBox(
-                            //           child: Column(
-                            //             children: <Widget>[
-                            //               _buildRecommendationsTVSeriesItem(
-                            //                   context),
-                            //             ],
-                            //           ),
-                            //         );
-                            //       } else {
-                            //         return Container();
-                            //       }
-                            //     },
-                            //   ),
                             SizedBox(height: 16),
                             Text(
                               'Season',
                               style: kHeading6,
                             ),
-                            // if (provider.tvSeries.seasons.isEmpty)
-                            //   Container(
-                            //     child: Text(
-                            //       'There is no Season',
-                            //     ),
-                            //   )
-                            // else
                             BlocBuilder<RecommendationTVSeriesBloc,
                                 RecommendationTVSeriesState>(
                               builder: (context, state) {
@@ -401,7 +325,6 @@ class _DetailContentState extends State<DetailContent> {
                                   );
                                 } else if (state
                                     is RecommendationTVSeriesHasData) {
-                                  final result = state.result;
                                   return Column(
                                     children: <Widget>[
                                       widget.tvSeries.seasons.isNotEmpty
@@ -492,9 +415,7 @@ class _DetailContentState extends State<DetailContent> {
                 ),
               );
             },
-            // initialChildSize: 0.5,
             minChildSize: 0.25,
-            // maxChildSize: 1.0,
           ),
         ),
         Padding(
@@ -527,7 +448,6 @@ class _DetailContentState extends State<DetailContent> {
     return result.substring(0, result.length - 2);
   }
 
-  // Widget _buildRecommendationsTVSeriesItem(
   String _showDuration(int runtime) {
     final int hours = runtime ~/ 60;
     final int minutes = runtime % 60;

@@ -17,6 +17,7 @@ class TopRatedMoviesLoading extends TopRatedMoviesState {
   List<Object> get props => [];
 }
 
+// ignore: must_be_immutable
 class TopRatedMoviesError extends TopRatedMoviesState {
   String message;
   TopRatedMoviesError(this.message);

@@ -1,11 +1,4 @@
 import 'package:bloc_test/bloc_test.dart';
-// import 'package:ditonton/presentation/bloc/movie/movie_detail/bloc/movie_detail_bloc.dart';
-// import 'package:ditonton/presentation/bloc/movie/movie_recommendations/movie_recommendations_bloc.dart';
-// import 'package:ditonton/presentation/bloc/movie/now_playing_movies/bloc/now_playing_movies_bloc.dart';
-// import 'package:ditonton/presentation/bloc/movie/popular_movies/bloc/popular_movies_bloc.dart';
-// import 'package:ditonton/presentation/bloc/movie/top_rated_movies/bloc/top_rated_movies_bloc.dart';
-// import 'package:ditonton/presentation/bloc/movie/watchlist_movies/watchlist_movies_bloc.dart';
-
 import 'package:ditonton/presentation/bloc/movie/bloc/detail_movie_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/bloc/recommendation_movies_bloc.dart';
 import 'package:ditonton/presentation/bloc/movie/bloc/now_playing_movies_bloc.dart';

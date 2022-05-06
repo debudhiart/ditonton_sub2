@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:ditonton/data/models/tv_series_detail_model.dart';
 import 'package:ditonton/domain/entities/tv_series.dart';
 import 'package:ditonton/domain/entities/tv_series_detail.dart';
 import 'package:ditonton/domain/usecases/delete_watchlist_tv_series.dart';

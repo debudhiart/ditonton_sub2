@@ -17,6 +17,7 @@ class DetailMovieLoading extends DetailMovieState {
   List<Object> get props => [];
 }
 
+// ignore: must_be_immutable
 class DetailMovieError extends DetailMovieState {
   String message;
   DetailMovieError(this.message);
