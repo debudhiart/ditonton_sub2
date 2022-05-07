@@ -2,6 +2,7 @@ import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/home_movie_page.dart';
 import 'package:ditonton/presentation/pages/home_tv_series_page.dart';
 import 'package:ditonton/presentation/pages/list_watchlist_page.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 
 class NavigationDrawer extends StatelessWidget {
@@ -23,6 +24,7 @@ class NavigationDrawer extends StatelessWidget {
             leading: Icon(Icons.movie),
             title: Text('Movies'),
             onTap: () {
+              FirebaseCrashlytics.instance.crash();
               Navigator.pop(context);
               Navigator.pushNamed(context, HomeMoviePage.ROUTE_NAME);
             },
