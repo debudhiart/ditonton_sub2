@@ -35,13 +35,13 @@ void main() {
       (WidgetTester tester) async {
     when(() => fakePopularMoviesBloc.state).thenReturn(PopularMoviesLoading());
 
-    final progressBarFinder = find.byType(CircularProgressIndicator);
+    final viewProgress = find.byType(CircularProgressIndicator);
     final centerFinder = find.byType(Center);
 
     await tester.pumpWidget(_makeTestableWidget(PopularMoviesPage()));
 
     expect(centerFinder, findsOneWidget);
-    expect(progressBarFinder, findsOneWidget);
+    expect(viewProgress, findsOneWidget);
   });
 
   testWidgets('Page should display ListView when data is loaded',

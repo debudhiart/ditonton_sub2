@@ -67,11 +67,11 @@ void main() {
     when(() => fakeWatchlistTVSeriesBloc.state)
         .thenReturn(WatchlistTVSeriesLoading());
 
-    final progressBarFinder = find.byType(CircularProgressIndicator);
+    final viewProgress = find.byType(CircularProgressIndicator);
 
     await tester.pumpWidget(_makeTestableWidget(TVSeriesDetailPage(id: 1)));
 
-    expect(progressBarFinder, findsOneWidget);
+    expect(viewProgress, findsOneWidget);
   });
 
   testWidgets(
@@ -84,11 +84,11 @@ void main() {
     when(() => fakeWatchlistTVSeriesBloc.state)
         .thenReturn(WatchlistTVSeriesLoading());
 
-    final progressBarFinder = find.byType(CircularProgressIndicator);
+    final viewProgress = find.byType(CircularProgressIndicator);
 
     await tester.pumpWidget(_makeTestableWidget(TVSeriesDetailPage(id: 1)));
 
-    expect(progressBarFinder, findsOneWidget);
+    expect(viewProgress, findsOneWidget);
   });
 
   testWidgets(
