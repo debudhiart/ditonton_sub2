@@ -27,6 +27,8 @@ class TVSeriesRepositoryImpl implements TVSeriesRepository {
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
       return Left(ServerFailure(''));
+    } on TlsException catch (e) {
+      return Left(CommonFailure('Certificated not valid\n${e.message}'));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     }
@@ -39,6 +41,8 @@ class TVSeriesRepositoryImpl implements TVSeriesRepository {
       return Right(result.toEntity());
     } on ServerException {
       return Left(ServerFailure(''));
+    } on TlsException catch (e) {
+      return Left(CommonFailure('Certificated not valid\n${e.message}'));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     }
@@ -52,6 +56,8 @@ class TVSeriesRepositoryImpl implements TVSeriesRepository {
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
       return Left(ServerFailure(''));
+    } on TlsException catch (e) {
+      return Left(CommonFailure('Certificated not valid\n${e.message}'));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     }
@@ -64,6 +70,8 @@ class TVSeriesRepositoryImpl implements TVSeriesRepository {
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
       return Left(ServerFailure(''));
+    } on TlsException catch (e) {
+      return Left(CommonFailure('Certificated not valid\n${e.message}'));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     }
@@ -76,6 +84,8 @@ class TVSeriesRepositoryImpl implements TVSeriesRepository {
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
       return Left(ServerFailure(''));
+    } on TlsException catch (e) {
+      return Left(CommonFailure('Certificated not valid\n${e.message}'));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     }
@@ -88,6 +98,8 @@ class TVSeriesRepositoryImpl implements TVSeriesRepository {
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
       return Left(ServerFailure(''));
+    } on TlsException catch (e) {
+      return Left(CommonFailure('Certificated not valid\n${e.message}'));
     } on SocketException {
       return Left(ConnectionFailure('Failed to connect to the network'));
     }
